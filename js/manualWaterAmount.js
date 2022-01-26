@@ -11,7 +11,6 @@ function addWaterManual(){
         waterAmountText = Number(waterAmountText) + 100;
         $waterAmount.innerText = waterAmountText;
     }
-    console.log($waterAmount.innerText)
 }
 
 function miunsWaterManual(){

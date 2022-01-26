@@ -3,13 +3,11 @@ const $waterTotal = document.querySelector("#total-water");
 
 // let waterAmountText = $waterAmount.innerText;
 
-const waters = [];
-
+const savedWater = localStorage.getItem("water");
 
 getWater();
 
 function handleWaterSave(){
-    const newWater = waterAmountText;
     $waterAmount.innerText = 0;
     if ($unit[0].innerText.includes("컵")) {
         localStorage.setItem("water", Number(localStorage.getItem("water")) + (Number(waterAmountText)*200)); 
@@ -17,7 +15,7 @@ function handleWaterSave(){
         localStorage.setItem("water", Number(localStorage.getItem("water")) + Number(waterAmountText))
     }
     getWater();
-    console.log(newWater);
+    waterAmountText = 0;
 
 }
 
@@ -29,10 +27,13 @@ function getWater(){
     }
 }
 
-
-
 function saveWater(){
     
 }
 
 $waterSave.addEventListener("click", handleWaterSave);
+
+
+//local storage의 총 water 수정 기능
+
+

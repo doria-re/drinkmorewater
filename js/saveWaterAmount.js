@@ -3,8 +3,6 @@ const $waterTotal = document.querySelector("#total-water");
 
 // let waterAmountText = $waterAmount.innerText;
 
-const savedWater = localStorage.getItem("water");
-
 getWater();
 
 function handleWaterSave(){
@@ -27,13 +25,29 @@ function getWater(){
     }
 }
 
-function saveWater(){
-    
-}
 
 $waterSave.addEventListener("click", handleWaterSave);
 
 
 //local storage의 총 water 수정 기능
 
+const $savedWaterAdd = document.querySelector("#add-saved-water");
+const $savedWaterMinus = document.querySelector("#minus-saved-water");
 
+function addSavedWater(){
+    localStorage.setItem("water", Number(localStorage.getItem("water")) + 100);
+    getWater();
+}
+
+
+function minusSavedWater(){
+    if (Number(localStorage.getItem("water")) <= 0) {
+        alert("0 미만으로 줄일 수 없습니다.");
+    } else {
+        localStorage.setItem("water", Number(localStorage.getItem("water")) - 100);
+        getWater();
+    }
+}
+
+$savedWaterAdd.addEventListener("click", addSavedWater);
+$savedWaterMinus.addEventListener("click", minusSavedWater);

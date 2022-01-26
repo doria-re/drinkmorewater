@@ -1,6 +1,5 @@
 <!--
     만들어야 하는 기능
-    1. local storage의 총 water 수정 기능
     ----------------------------------- 우선순위 하
     1. 매일매일 먹은 물 양 확인 가능한 테이블 & 
 -->
@@ -23,20 +22,29 @@
     <div>
         <button id="water-record" onclick="onClickButton()">눌러서 기록</button>
     </div>
-    <span id="amount">
-        0
-    </span>
-    <span class="unit">컵</span>
-    <div></div>
-    <button id="add-water-manual">늘리기</button>
-    <button id="minus-water-manual">줄이기</button>
-    <button id="save-water">저장하기</button>
-    <div></div>
-    <span>
-        오늘 마신 물의 양 :
-    </span>
-    <div id="total-water" class="h-align">0</div>
-    <span class="unit">컵</span>
+    <div>
+        <span id="amount">
+            0
+        </span>
+        <span class="unit">컵</span>
+    </div>
+    <div>
+        <button id="add-water-manual">늘리기</button>
+        <button id="minus-water-manual">줄이기</button>
+        <button id="save-water">저장하기</button>
+    </div>
+    <div>
+        <span>
+            오늘 마신 물의 양 :
+        </span>
+        <span id="total-water">0</span>
+        <span class="unit">컵</span>
+    </div>
+    <div>
+        저장된 물의 양을
+        <button id="add-saved-water">늘리기</button>
+        <button id="minus-saved-water">줄이기</button>
+    </div>
     <script src="js/unit.js"></script>
     <script src="js/waterAmount.js"></script>
     <script src="js/manualWaterAmount.js"></script>

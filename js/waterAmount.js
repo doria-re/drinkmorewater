@@ -1,10 +1,33 @@
-const waterRecord = document.querySelector("#water-record");
-const waterAmount = document.querySelector("#amount");
-console.log(unit[0].innerText)
+const $waterButton = document.querySelector("#water-record");
+const $waterAmount = document.querySelector("#amount");
+let waterAmountText = $waterAmount.innerText;
 
+let count = 0;
 
+function onClickButton (){
+    count++;
+}
 
+function addWater(){
+    if ($unit[0].innerText.includes("컵")){
+        waterAmountText = Number(waterAmountText) + 0.5;
+        $waterAmount.innerText = waterAmountText;
+    } else{
+        waterAmountText = Number(waterAmountText) + 100;
+        $waterAmount.innerText = waterAmountText;
+    }
+    
+}
 
+let waterInterval;
+function water(){
+    if (count % 2 === 0){
+        clearInterval(waterInterval);
+        
+    } else {
+        waterInterval = setInterval(addWater, 1000);
+    }
+}
 
-//한번 누르면 물이 1초에 일정 단위만큼 늘어나고
-//한번 더 누르면 멈춤
+$waterButton.addEventListener("click", water);
+

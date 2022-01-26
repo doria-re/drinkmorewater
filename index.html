@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-    <meta 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Drink More Water</title>
@@ -15,11 +14,24 @@
         <button id="change-unit">></button>
     </div>
     <div>
-        <button id="water-record">눌러서 기록</button>
+        <button id="water-record" onclick="onClickButton()">눌러서 기록</button>
     </div>
     <div id="amount" class="h-align">
         0
     </div>
     <div class="h-align unit">컵</div>
-    <script src="js/app.js"></script>
+    <div></div>
+    <button id="add-water-manual">늘리기</button>
+    <button id="minus-water-manual">줄이기</button>
+    <button id="save-water">저장하기</button>
+    <div></div>
+    <div class="h-align">
+        오늘 마신 물의 양 :
+    </div>
+    <div id="total-water" class="h-align">0</div>
+    <div class="h-align unit">컵</div>
+    <script src="js/unit.js"></script>
+    <script src="js/waterAmount.js"></script>
+    <script src="js/manualWaterAmount.js"></script>
+    <script src="js/saveWaterAmount.js"></script>
 </body>

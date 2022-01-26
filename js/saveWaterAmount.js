@@ -1,6 +1,8 @@
 const $waterSave = document.querySelector("#save-water");
 const $waterTotal = document.querySelector("#total-water");
 
+
+
 getWater();
 
 function getWater(){

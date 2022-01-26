@@ -1,8 +1,6 @@
 const unit = document.querySelectorAll(".unit");
 const clickUnitButton = document.querySelector("#change-unit");
-const waterRecord = document.querySelector("#water-record");
-const waterAmount = document.querySelector("#amount");
-console.log(unit[0].innerText)
+
 
 
 function changeUnit(){
@@ -17,14 +15,6 @@ function changeUnit(){
     }
 }
 
-function addWater(){
-    waterAmount++;
-}
-//한번 누르면 물이 1초에 일정 단위만큼 늘어나고
-//한번 더 누르면 멈춤
-
 clickUnitButton.addEventListener("click", changeUnit);
 
-function startStopWaterRecord(set){
-    waterRecord.addEventListener("click", set);
-}
+

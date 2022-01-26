@@ -24,9 +24,10 @@ let waterInterval;
 function water(){
     if (count % 2 === 0){
         clearInterval(waterInterval);
-        
+        $waterButton.innerText = "눌러서 기록 시작";
     } else {
         waterInterval = setInterval(addWater, 1000);
+        $waterButton.innerText = "눌러서 멈춤";
     }
 }
 

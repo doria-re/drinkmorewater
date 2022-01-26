@@ -1,7 +1,7 @@
 const $unit = document.querySelectorAll(".unit");
 const $unitButtonClick = document.querySelector("#change-unit");
 
-
+// let waterAmountText = $waterAmount.innerText;
 
 function changeUnit(){
     waterAmountText = 0;

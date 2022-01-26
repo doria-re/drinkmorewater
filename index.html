@@ -16,28 +16,28 @@
     <h1>마신 물을 기록하자!</h1>
     <h2>하루 2L는 먹어야 피부가 탱탱</h2>
     <div>
-        <div class="h-align unit">
+        <span class="unit">
             컵 단위로 기록
-        </div>
+        </span>
         <button id="change-unit">></button>
     </div>
     <div>
         <button id="water-record" onclick="onClickButton()">눌러서 기록</button>
     </div>
-    <div id="amount" class="h-align">
+    <span id="amount">
         0
-    </div>
-    <div class="h-align unit">컵</div>
+    </span>
+    <span class="unit">컵</span>
     <div></div>
     <button id="add-water-manual">늘리기</button>
     <button id="minus-water-manual">줄이기</button>
     <button id="save-water">저장하기</button>
     <div></div>
-    <div class="h-align">
+    <span>
         오늘 마신 물의 양 :
-    </div>
+    </span>
     <div id="total-water" class="h-align">0</div>
-    <div class="h-align unit">컵</div>
+    <span class="unit">컵</span>
     <script src="js/unit.js"></script>
     <script src="js/waterAmount.js"></script>
     <script src="js/manualWaterAmount.js"></script>

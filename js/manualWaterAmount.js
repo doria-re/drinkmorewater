@@ -1,6 +1,8 @@
 const $waterAddManual = document.querySelector("#add-water-manual");
 const $waterMinusManual = document.querySelector("#minus-water-manual");
 
+// let waterAmountText = $waterAmount.innerText;
+
 function addWaterManual(){
     if ($unit[0].innerText.includes("컵")){
         waterAmountText = Number(waterAmountText) + 0.5;

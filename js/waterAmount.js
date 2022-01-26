@@ -1,5 +1,6 @@
 const $waterButton = document.querySelector("#water-record");
 const $waterAmount = document.querySelector("#amount");
+
 let waterAmountText = $waterAmount.innerText;
 
 let count = 0;

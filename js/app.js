@@ -13,8 +13,8 @@ const HALF_CUP_ML = 100;
 const HALF_CUP_CUP = 0.5;
 const ONE_CUP = 200;
 
-
 let currentUnit = $unit[1].innerText;
+let localWaterAmount = Number(localStorage.getItem("water"));
 
 let count = 0;
 let waterAmount = 0;
@@ -38,7 +38,7 @@ function changeUnit(){
     getWater();
 }
 
-$unitButtonClick.addEventListener("click", changeUnit);
+
 
 
 
@@ -68,12 +68,6 @@ function handleClickWater(){
     }
 }
 
-$waterButton.addEventListener("click", handleClickWater);
-
-
-
-
-
 
 function addWaterManual(){
     if (currentUnit === "컵"){
@@ -95,17 +89,9 @@ function miunsWaterManual(){
     $waterAmount.innerText = waterAmount;
 }
 
-$waterAddManual.addEventListener("click", addWaterManual);
-$waterMinusManual.addEventListener("click", miunsWaterManual);
-
-
-let localWaterAmount = Number(localStorage.getItem("water"));
-let newLocalWaterAmount = 0;
-
-
-getWater();
 
 function handleWaterSave(){
+    let newLocalWaterAmount = 0;
     if (currentUnit === "컵") {
         newLocalWaterAmount = localWaterAmount + (waterAmount*ONE_CUP);
     } else {
@@ -127,15 +113,8 @@ function getWater(){
 }
 
 
-$waterSave.addEventListener("click", handleWaterSave);
-
-
-//local storage의 총 water 수정 기능
-//let localWaterAmount = Number(localStorage.getItem("water"));
-//let newLocalWaterAmount = 0;
-
-
 function addLocalWater(){
+    let newLocalWaterAmount = 0;
     newLocalWaterAmount = localWaterAmount + HALF_CUP_ML;
     localStorage.setItem("water", newLocalWaterAmount);
     localWaterAmount = newLocalWaterAmount;
@@ -144,6 +123,7 @@ function addLocalWater(){
 
 
 function minusLocalWater(){
+    let newLocalWaterAmount = 0;
     if (localWaterAmount <= 0) {
         alert("0 미만으로 줄일 수 없습니다.");
     } else {
@@ -154,5 +134,13 @@ function minusLocalWater(){
     }
 }
 
+getWater();
+
+
+$unitButtonClick.addEventListener("click", changeUnit);
+$waterButton.addEventListener("click", handleClickWater);
+$waterAddManual.addEventListener("click", addWaterManual);
+$waterMinusManual.addEventListener("click", miunsWaterManual);
+$waterSave.addEventListener("click", handleWaterSave);
 $savedWaterAdd.addEventListener("click", addLocalWater);
 $savedWaterMinus.addEventListener("click", minusLocalWater);
